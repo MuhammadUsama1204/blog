@@ -1,0 +1,2 @@
+# railsApp
+Learning phase RoR 
