@@ -7439,3 +7439,48 @@ Processing by ArticlesController#index as TURBO_STREAM
 Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.4ms | Allocations: 4381)
 
 
+Started GET "/articles/1" for 127.0.0.1 at 2023-08-28 14:19:46 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 26)
+  Rendered comments/_form_comment.html.erb (Duration: 3.7ms | Allocations: 1391)
+  Rendered articles/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2351)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 4551)
+Completed 200 OK in 22ms (Views: 16.5ms | ActiveRecord: 0.8ms | Allocations: 5478)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-28 14:21:15 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3998)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 18052)
+Completed 200 OK in 37ms (Views: 32.2ms | ActiveRecord: 1.0ms | Allocations: 20162)
+
+
+Started GET "/articles/2?locale=en" for 127.0.0.1 at 2023-08-28 14:21:16 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"2"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 2]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.6ms | Allocations: 291)
+  Rendered comments/_form_comment.html.erb (Duration: 2.0ms | Allocations: 1544)
+  Rendered articles/show.html.erb within layouts/application (Duration: 16.0ms | Allocations: 7753)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 10055)
+Completed 200 OK in 33ms (Views: 24.4ms | ActiveRecord: 1.6ms | Allocations: 11448)
+
+
