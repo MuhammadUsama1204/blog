@@ -11631,3 +11631,1293 @@ Migrating to CreateProfiles (20230830070255)
   [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-08-30 12:12:56 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 8056)
+  Rendered layout layouts/application.html.erb (Duration: 91.4ms | Allocations: 42448)
+Completed 200 OK in 116ms (Views: 95.0ms | ActiveRecord: 0.9ms | Allocations: 48932)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 12:13:03 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/profile"):
+  
+Started GET "/" for 127.0.0.1 at 2023-08-30 12:13:09 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 1771)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 4290)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.7ms | Allocations: 4609)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-30 12:13:09 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 1591)
+  Rendered layout layouts/application.html.erb (Duration: 81.4ms | Allocations: 3957)
+Completed 200 OK in 86ms (Views: 82.6ms | ActiveRecord: 1.2ms | Allocations: 4236)
+
+
+Started GET "/show" for 127.0.0.1 at 2023-08-30 12:13:27 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/show"):
+  
+Started GET "/show" for 127.0.0.1 at 2023-08-30 12:14:33 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/show"):
+  
+Started GET "/profile/show" for 127.0.0.1 at 2023-08-30 12:14:40 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/profile/show"):
+  
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230830073858)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "User_Name" text, "contact" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateClients (20230830074524)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "clients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "User_Name" text, "contact" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230830074524"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-08-30 12:46:29 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4009)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 18254)
+Completed 200 OK in 31ms (Views: 25.3ms | ActiveRecord: 1.4ms | Allocations: 20792)
+
+
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 12:46:37 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (1.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1295)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3724)
+Completed 200 OK in 22ms (Views: 15.6ms | ActiveRecord: 1.1ms | Allocations: 5051)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2023-08-30 12:46:40 +0500
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (Duration: 7.5ms | Allocations: 2315)
+  Rendered clients/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2620)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4932)
+Completed 200 OK in 23ms (Views: 12.1ms | ActiveRecord: 0.8ms | Allocations: 7954)
+
+
+Started POST "/clients" for 127.0.0.1 at 2023-08-30 12:46:46 +0500
+Processing by ClientsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "client"=>{"User_Name"=>"usama", "contact"=>"12345"}, "commit"=>"Create Client"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:27:in `block in create'
+  [1m[36mClient Create (0.7ms)[0m  [1m[32mINSERT INTO "clients" ("User_Name", "contact", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["User_Name", "usama"], ["contact", "12345"], ["created_at", "2023-08-30 07:46:46.408309"], ["updated_at", "2023-08-30 07:46:46.408309"]]
+  ↳ app/controllers/clients_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/clients/1
+Completed 302 Found in 26ms (ActiveRecord: 3.5ms | Allocations: 3728)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 12:46:46 +0500
+Processing by ClientsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 1.0ms | Allocations: 225)
+  Rendered clients/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3813)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 5857)
+
+
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 12:46:51 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered clients/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 997)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 3191)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.3ms | Allocations: 3502)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 12:47:09 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 0.3ms | Allocations: 19)
+  Rendered clients/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 560)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 2744)
+Completed 200 OK in 25ms (Views: 19.2ms | ActiveRecord: 0.4ms | Allocations: 3504)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 12:47:37 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 0.3ms | Allocations: 42)
+  Rendered clients/show.html.erb within layouts/application (Duration: 78.8ms | Allocations: 1195)
+  Rendered layout layouts/application.html.erb (Duration: 97.1ms | Allocations: 15069)
+Completed 200 OK in 108ms (Views: 98.9ms | ActiveRecord: 0.9ms | Allocations: 19325)
+
+
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 12:47:39 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.5ms | Allocations: 24)
+  Rendered clients/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1089)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 3287)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.7ms | Allocations: 3606)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 12:47:40 +0500
+Processing by ProfilesController#show as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1267)
+
+
+  
+NoMethodError (undefined method `profile' for nil:NilClass
+
+        @username = @user.profile.username
+                         ^^^^^^^^):
+  
+app/controllers/profiles_controller.rb:3:in `show'
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 12:47:52 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered clients/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1004)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3329)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.1ms | Allocations: 3633)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2023-08-30 12:47:55 +0500
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (Duration: 4.1ms | Allocations: 1058)
+  Rendered clients/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1147)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3339)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 3629)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 12:47:58 +0500
+Processing by ProfilesController#show as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1070)
+
+
+  
+NoMethodError (undefined method `profile' for nil:NilClass
+
+        @username = @user.profile.username
+                         ^^^^^^^^):
+  
+app/controllers/profiles_controller.rb:3:in `show'
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 12:48:01 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered clients/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 912)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 3119)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.2ms | Allocations: 3391)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 12:48:37 +0500
+Processing by ProfilesController#show as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1069)
+
+
+  
+NoMethodError (undefined method `profile' for nil:NilClass
+
+        @username = @user.profile.username
+                         ^^^^^^^^):
+  
+app/controllers/profiles_controller.rb:3:in `show'
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 12:51:43 +0500
+Processing by ProfilesController#show as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1098)
+
+
+  
+NoMethodError (undefined method `profile' for nil:NilClass
+
+        @username = @client.profile.User_Name
+                           ^^^^^^^^):
+  
+app/controllers/profiles_controller.rb:3:in `show'
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 12:51:44 +0500
+Processing by ProfilesController#show as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1071)
+
+
+  
+NoMethodError (undefined method `profile' for nil:NilClass
+
+        @username = @client.profile.User_Name
+                           ^^^^^^^^):
+  
+app/controllers/profiles_controller.rb:3:in `show'
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 12:52:46 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered clients/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 3045)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | Allocations: 16909)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 2.7ms | Allocations: 18284)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2023-08-30 12:52:50 +0500
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (Duration: 1.3ms | Allocations: 1062)
+  Rendered clients/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1154)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3346)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 3654)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 12:52:55 +0500
+Processing by ProfilesController#show as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 1147)
+
+
+  
+NoMethodError (undefined method `profile' for nil:NilClass
+
+        @username = @client.profile.User_Name
+                           ^^^^^^^^):
+  
+app/controllers/profiles_controller.rb:3:in `show'
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 12:54:52 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.3ms | Allocations: 23)
+  Rendered clients/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1013)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 3338)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.3ms | Allocations: 3642)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 12:54:55 +0500
+Processing by ProfilesController#show as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1071)
+
+
+  
+NoMethodError (undefined method `profile' for nil:NilClass
+
+        @username = @client.profile.User_Name
+                           ^^^^^^^^):
+  
+app/controllers/profiles_controller.rb:3:in `show'
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 12:56:45 +0500
+Processing by ProfilesController#show as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 1071)
+
+
+  
+NoMethodError (undefined method `profile' for nil:NilClass
+
+        @username = @client.profile.User_Name
+                           ^^^^^^^^):
+  
+app/controllers/profiles_controller.rb:3:in `show'
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 12:57:15 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered clients/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3449)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 17499)
+Completed 200 OK in 32ms (Views: 26.4ms | ActiveRecord: 1.0ms | Allocations: 19271)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 12:57:17 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered clients/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 755)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 2939)
+Completed 200 OK in 38ms (Views: 25.6ms | ActiveRecord: 0.7ms | Allocations: 4443)
+
+
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 13:00:24 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.6ms | Allocations: 187)
+  Rendered clients/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 3422)
+  Rendered layout layouts/application.html.erb (Duration: 50.6ms | Allocations: 17413)
+Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 2.8ms | Allocations: 19226)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 13:00:26 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 0.3ms | Allocations: 19)
+  Rendered clients/show.html.erb within layouts/application (Duration: 7.4ms | Allocations: 751)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 2944)
+Completed 200 OK in 38ms (Views: 27.3ms | ActiveRecord: 0.5ms | Allocations: 4446)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 13:00:39 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 0.2ms | Allocations: 42)
+  Rendered clients/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 890)
+  Rendered layout layouts/application.html.erb (Duration: 68.7ms | Allocations: 14708)
+Completed 200 OK in 82ms (Views: 71.0ms | ActiveRecord: 1.3ms | Allocations: 19074)
+
+
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 13:00:42 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered clients/index.html.erb within layouts/application (Duration: 27.3ms | Allocations: 1024)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 3232)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.3ms | Allocations: 3528)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:00:44 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2407)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2495)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 3242)
+
+
+  
+ActionView::Template::Error (Missing partial profiles/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/yasir/Usama_Work/Projects/blog/app/views"
+  * "/home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.4.0/app/views"
+  * "/home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.7/app/views"
+  * "/home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.7/app/views"
+
+Did you mean?  articles/form
+               clients/form
+               comments/form_comment
+               comments/comment
+               action_text/attachables/remote_image
+               action_text/contents/content):
+    1: <h1>Profile: Editing client</h1>
+    2: 
+    3: <%= render "form", client: @client %>
+    4: 
+    5: <br>
+    6: 
+  
+app/views/profiles/show.html.erb:3
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:02:54 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered clients/_form.html.erb (Duration: 14.9ms | Allocations: 2276)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 18.9ms | Allocations: 2586)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 2671)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 3562)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass
+
+'.freeze;   if client.errors.any? 
+                     ^^^^^^^):
+    1: <%= form_with(model: client) do |form| %>
+    2:   <% if client.errors.any? %>
+    3:     <div style="color: red">
+    4:       <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+    5: 
+  
+app/views/clients/_form.html.erb:2
+app/views/clients/_form.html.erb:1
+app/views/profiles/show.html.erb:3
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 13:03:51 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 3.4ms | Allocations: 177)
+  Rendered clients/index.html.erb within layouts/application (Duration: 17.0ms | Allocations: 1643)
+  Rendered layout layouts/application.html.erb (Duration: 42.0ms | Allocations: 4239)
+Completed 200 OK in 59ms (Views: 49.0ms | ActiveRecord: 0.4ms | Allocations: 5199)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2023-08-30 13:03:54 +0500
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (Duration: 10.6ms | Allocations: 1393)
+  Rendered clients/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1672)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 3864)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.0ms | Allocations: 4227)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:04:00 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 14.0ms | Allocations: 2251)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 2339)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 2951)
+
+
+  
+ActionView::Template::Error (Missing partial client/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/yasir/Usama_Work/Projects/blog/app/views"
+  * "/home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.4.0/app/views"
+  * "/home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.7/app/views"
+  * "/home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.7/app/views"
+
+Did you mean?  clients/form
+               comments/form_comment
+               articles/form
+               clients/client
+               comments/comment
+               action_text/attachables/remote_image):
+    1: <h1>Profile: Editing client</h1>
+    2: 
+    3: <%= render "client/form", client: @client %>
+    4: 
+    5: <br>
+    6: 
+  
+app/views/profiles/show.html.erb:3
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 13:04:03 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 2.1ms | Allocations: 23)
+  Rendered clients/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 1024)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 3349)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.4ms | Allocations: 3651)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 13:04:07 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered clients/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 774)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 2958)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 3793)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 13:04:37 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 4.6ms | Allocations: 177)
+  Rendered clients/show.html.erb within layouts/application (Duration: 21.1ms | Allocations: 1228)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 3783)
+Completed 200 OK in 74ms (Views: 57.2ms | ActiveRecord: 0.5ms | Allocations: 5184)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 13:04:39 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered clients/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 582)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 2766)
+Completed 200 OK in 18ms (Views: 11.3ms | ActiveRecord: 0.6ms | Allocations: 3575)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 13:04:52 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 2.2ms | Allocations: 177)
+  Rendered clients/show.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1216)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 3771)
+Completed 200 OK in 48ms (Views: 38.5ms | ActiveRecord: 0.4ms | Allocations: 5180)
+
+
+Started GET "/clients/1/edit" for 127.0.0.1 at 2023-08-30 13:05:02 +0500
+Processing by ClientsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/edit.html.erb within layouts/application
+  Rendered clients/_form.html.erb (Duration: 4.9ms | Allocations: 1623)
+  Rendered clients/edit.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2038)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 4604)
+Completed 200 OK in 25ms (Views: 19.1ms | ActiveRecord: 0.4ms | Allocations: 6069)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 13:05:54 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 2.9ms | Allocations: 177)
+  Rendered clients/show.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1223)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 3778)
+Completed 200 OK in 36ms (Views: 22.3ms | ActiveRecord: 0.5ms | Allocations: 5266)
+
+
+Started GET "/clients/1" for 127.0.0.1 at 2023-08-30 13:06:19 +0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:63:in `set_client'
+  Rendering layout layouts/application.html.erb
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 3.2ms | Allocations: 177)
+  Rendered clients/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 1216)
+  Rendered layout layouts/application.html.erb (Duration: 33.2ms | Allocations: 3771)
+Completed 200 OK in 52ms (Views: 42.9ms | ActiveRecord: 0.6ms | Allocations: 5256)
+
+
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 13:06:23 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.1ms | Allocations: 19)
+  Rendered clients/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1166)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3359)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms | Allocations: 3729)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:06:24 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 1203)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 1818)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <h1>Profile: Client</h1>
+    2: 
+    3: <%= render @client %>
+  
+app/views/profiles/show.html.erb:3
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 13:07:15 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.5ms | Allocations: 23)
+  Rendered clients/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1029)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3354)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 3656)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:08:40 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 961)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 1040)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 1275)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <h1>Profile: Client</h1>
+    2: 
+    3: <%= render @client %>
+  
+app/views/profiles/show.html.erb:3
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 13:08:45 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.4ms | Allocations: 19)
+  Rendered clients/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 912)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 3119)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.5ms | Allocations: 3390)
+
+
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 13:09:53 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.7ms | Allocations: 177)
+  Rendered clients/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1639)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4220)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.3ms | Allocations: 5155)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:09:55 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1107)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 1195)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms | Allocations: 1823)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <h1>Profile</h1>
+    2: 
+    3: # <%= render @client %>
+  
+app/views/profiles/show.html.erb:3
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:10:04 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 2959)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 3891)
+
+
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:10:16 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1198)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 2098)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <h1>Profile</h1>
+    2: <%= render @client %>
+  
+app/views/profiles/show.html.erb:2
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:13:25 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered clients/_client.html.erb (Duration: 20.4ms | Allocations: 5072)
+  Rendered profiles/show.html.erb within layouts/application (Duration: 23.6ms | Allocations: 5370)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 5455)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.0ms | Allocations: 6349)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x00000000041690>
+
+            @virtual_path = "clients/_client";;@output_buffer.safe_append='<div id="'.freeze;@output_buffer.append=( dom_id client );@output_buffer.safe_append='">
+                                                                                                                            ^^^^^^
+Did you mean?  client_url):
+    1: <div id="<%= dom_id client %>">
+    2:   <p>
+    3:     <strong>User name:</strong>
+    4:     <%= client.User_Name %>
+  
+app/views/clients/_client.html.erb:1
+app/views/profiles/show.html.erb:2
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:13:54 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2224)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2312)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3204)
+
+
+  
+ActionView::Template::Error (Missing partial clients/__client with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/yasir/Usama_Work/Projects/blog/app/views"
+  * "/home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.4.0/app/views"
+  * "/home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.7/app/views"
+  * "/home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.7/app/views"
+
+Did you mean?  clients/client
+               comments/comment
+               comments/form_comment
+               clients/form
+               layouts/action_text/contents/content
+               action_text/contents/content):
+    1: <h1>Profile</h1>
+    2: <%= render :partial => 'clients/_client' %>
+  
+app/views/profiles/show.html.erb:2
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:14:28 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 13.2ms | Allocations: 4813)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 4901)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 5793)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x00000000041ca8>
+
+<div id="'.freeze;@output_buffer.append=( dom_id client );@output_buffer.safe_append='">
+                                                 ^^^^^^
+Did you mean?  client_url):
+    1: <h1>Profile</h1>
+    2: <div id="<%= dom_id client %>">
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+  
+app/views/profiles/show.html.erb:2
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:15:06 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1482)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1570)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 2467)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"clients"}, missing required keys: [:id]
+Did you mean?  clients_url):
+    1: <h1>Profile</h1>
+    2: <div id="<%= dom_id client_url %>">
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+  
+app/views/profiles/show.html.erb:2
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:15:25 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1235)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1323)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 2215)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"clients", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Profile</h1>
+    2: <div id="<%= dom_id client_url(@client) %>">
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+  
+app/views/profiles/show.html.erb:2
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:16:12 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2929)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 3017)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 3909)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for "http://127.0.0.1:3000/clients/client":String
+
+      key = convert_to_model(record).to_key
+                                    ^^^^^^^
+Did you mean?  to_query):
+    1: <h1>Profile</h1>
+    2: <div id="<%= dom_id client_url(:client) %>">
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+  
+app/views/profiles/show.html.erb:2
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:16:58 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 21.0ms | Allocations: 4778)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 4866)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms | Allocations: 5758)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x00000000042928>
+
+    '.freeze;@output_buffer.append=( client.User_Name );@output_buffer.safe_append='
+                                     ^^^^^^
+Did you mean?  client_url):
+    2: 
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/profiles/show.html.erb:5
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:16:59 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 25.6ms | Allocations: 4576)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 4655)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms | Allocations: 4907)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x00000000042bf8>
+
+    '.freeze;@output_buffer.append=( client.User_Name );@output_buffer.safe_append='
+                                     ^^^^^^
+Did you mean?  client_url):
+    2: 
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/profiles/show.html.erb:5
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:17:00 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 23.3ms | Allocations: 4576)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 4655)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms | Allocations: 4889)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x00000000042ec8>
+
+    '.freeze;@output_buffer.append=( client.User_Name );@output_buffer.safe_append='
+                                     ^^^^^^
+Did you mean?  client_url):
+    2: 
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/profiles/show.html.erb:5
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:17:42 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 13.4ms | Allocations: 4777)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 4865)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms | Allocations: 5739)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x00000000043210>
+
+    '.freeze;@output_buffer.append=( client.User_Name );@output_buffer.safe_append='
+                                     ^^^^^^
+Did you mean?  client_url):
+    2: #{Include Client}
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/profiles/show.html.erb:5
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:17:43 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 43.3ms | Allocations: 4576)
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 4655)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms | Allocations: 4907)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x000000000434e0>
+
+    '.freeze;@output_buffer.append=( client.User_Name );@output_buffer.safe_append='
+                                     ^^^^^^
+Did you mean?  client_url):
+    2: #{Include Client}
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/profiles/show.html.erb:5
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:17:44 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 12.1ms | Allocations: 4574)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4653)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms | Allocations: 4887)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x000000000437b0>
+
+    '.freeze;@output_buffer.append=( client.User_Name );@output_buffer.safe_append='
+                                     ^^^^^^
+Did you mean?  client_url):
+    2: #{Include Client}
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/profiles/show.html.erb:5
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 13:17:44 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 22.8ms | Allocations: 4576)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 4655)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms | Allocations: 4889)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x00000000043a80>
+
+    '.freeze;@output_buffer.append=( client.User_Name );@output_buffer.safe_append='
+                                     ^^^^^^
+Did you mean?  client_url):
+    2: #{Include Client}
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/profiles/show.html.erb:5
+Started GET "/" for 127.0.0.1 at 2023-08-30 13:17:58 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 4091)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 6908)
+Completed 200 OK in 31ms (Views: 19.9ms | ActiveRecord: 2.2ms | Allocations: 8921)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-30 13:41:57 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1727)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4086)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.9ms | Allocations: 4375)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-30 13:41:58 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1583)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 3924)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.8ms | Allocations: 4196)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-30 13:42:01 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 1583)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 3946)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.9ms | Allocations: 4217)
+
+
+Started GET "/" for 127.0.0.1 at 2023-08-30 17:02:55 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 8058)
+  Rendered layout layouts/application.html.erb (Duration: 85.8ms | Allocations: 42617)
+Completed 200 OK in 112ms (Views: 89.7ms | ActiveRecord: 1.2ms | Allocations: 49115)
+
+
+Started GET "/articles/3?locale=en" for 127.0.0.1 at 2023-08-30 17:02:57 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"3"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:13:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 32)
+  Rendered comments/_form_comment.html.erb (Duration: 19.6ms | Allocations: 7075)
+  Rendered articles/show.html.erb within layouts/application (Duration: 54.2ms | Allocations: 12731)
+  Rendered layout layouts/application.html.erb (Duration: 57.7ms | Allocations: 15032)
+Completed 200 OK in 68ms (Views: 57.2ms | ActiveRecord: 2.2ms | Allocations: 17067)
+
+
+Started DELETE "/articles/3" for 127.0.0.1 at 2023-08-30 17:03:00 +0500
+Processing by ArticlesController#destroy as TURBO_STREAM
+  Parameters: {"locale"=>"en", "id"=>"3"}
+Filter chain halted as #<Proc:0x00007f010ce44698 /home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_controller/metal/http_authentication.rb:79> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 453)
+
+
+Started DELETE "/articles/3" for 127.0.0.1 at 2023-08-30 17:03:11 +0500
+Processing by ArticlesController#destroy as TURBO_STREAM
+  Parameters: {"locale"=>"en", "id"=>"3"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:47:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:48:in `destroy'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 3]]
+  ↳ app/controllers/articles_controller.rb:48:in `destroy'
+  [1m[36mArticle Destroy (1.1ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:48:in `destroy'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:48:in `destroy'
+Redirected to http://127.0.0.1:3000/?locale=en
+Completed 303 See Other in 45ms (ActiveRecord: 7.7ms | Allocations: 3700)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at 2023-08-30 17:03:11 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1575)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4084)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.7ms | Allocations: 4449)
+
+
+Started GET "/articles/new?locale=en" for 127.0.0.1 at 2023-08-30 17:03:13 +0500
+Processing by ArticlesController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 14.8ms | Allocations: 1821)
+  Rendered articles/new.html.erb within layouts/application (Duration: 18.9ms | Allocations: 2094)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 4287)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 4673)
+
+
+Started POST "/articles?locale=en" for 127.0.0.1 at 2023-08-30 17:03:32 +0500
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"caps", "body"=>"caps are made by xprolabs", "status"=>"public"}, "commit"=>"Create Article", "locale"=>"en"}
+Filter chain halted as #<Proc:0x00007f010ce44698 /home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_controller/metal/http_authentication.rb:79> rendered or redirected
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started POST "/articles?locale=en" for 127.0.0.1 at 2023-08-30 17:03:32 +0500
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"caps", "body"=>"caps are made by xprolabs", "status"=>"public"}, "commit"=>"Create Article", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:23:in `create'
+  [1m[36mArticle Create (0.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["title", "caps"], ["body", "caps are made by xprolabs"], ["created_at", "2023-08-30 12:03:32.080794"], ["updated_at", "2023-08-30 12:03:32.080794"], ["status", "public"]]
+  ↳ app/controllers/articles_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/?locale=en
+Completed 302 Found in 13ms (ActiveRecord: 3.0ms | Allocations: 3503)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at 2023-08-30 17:03:32 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1585)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3997)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.4ms | Allocations: 4273)
+
+
+Started GET "//profile" for 127.0.0.1 at 2023-08-30 17:03:41 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 26.7ms | Allocations: 5146)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 5244)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms | Allocations: 6045)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x0000000000d4f8>
+
+    '.freeze;@output_buffer.append=( client.User_Name );@output_buffer.safe_append='
+                                     ^^^^^^
+Did you mean?  client_url):
+    2: #{Include Client}
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/profiles/show.html.erb:5
+Started GET "/profile" for 127.0.0.1 at 2023-08-30 17:03:49 +0500
+Processing by ProfilesController#show as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering profiles/show.html.erb within layouts/application
+  Rendered profiles/show.html.erb within layouts/application (Duration: 12.4ms | Allocations: 4629)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4708)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 4974)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<ActionView::Base:0x0000000000d7c8>
+
+    '.freeze;@output_buffer.append=( client.User_Name );@output_buffer.safe_append='
+                                     ^^^^^^
+Did you mean?  client_url):
+    2: #{Include Client}
+    3:   <p>
+    4:     <strong>User name:</strong>
+    5:     <%= client.User_Name %>
+    6:   </p>
+    7: 
+    8:   <p>
+  
+app/views/profiles/show.html.erb:5
+Started GET "/clients" for 127.0.0.1 at 2023-08-30 17:04:09 +0500
+Processing by ClientsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/views/clients/index.html.erb:6
+  Rendered clients/_client.html.erb (Duration: 0.8ms | Allocations: 234)
+  Rendered clients/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 4803)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 7230)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 1.3ms | Allocations: 8534)
+
+
+Started GET "/clients/new" for 127.0.0.1 at 2023-08-30 17:04:16 +0500
+Processing by ClientsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/_form.html.erb (Duration: 5.3ms | Allocations: 1572)
+  Rendered clients/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1858)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 4051)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 4430)
+
+
