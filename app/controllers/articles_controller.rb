@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   def default_url_options
     { locale: I18n.locale }
   end
-  
+ 
   def index
     @articles = Article.all
   end
@@ -55,3 +55,8 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :body,:status)
     end
 end
+
+
+
+
+  
