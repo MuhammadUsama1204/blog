@@ -1,8 +1,10 @@
 class ArticlesController < ApplicationController
+  
   http_basic_authenticate_with name: "usama", password: "123", except: [:index, :show]
   def default_url_options
     { locale: I18n.locale }
   end
+ 
  
   def index
     @articles = Article.all
