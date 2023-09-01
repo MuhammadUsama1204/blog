@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: %i[ show edit update destroy ]
- 
+ #apply conversion
     include ActiveModel::Conversion
   
     def persisted?
