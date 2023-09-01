@@ -8,8 +8,9 @@
         <div><%= message %></div>
       <% end %>
     </div>
-  
+
     <div>
+    
       <%= form.label :body %><br>
       <%= form.text_area :body %><br>
       <% article.errors.full_messages_for(:body).each do |message| %>
@@ -21,9 +22,8 @@
   <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
 </div>
 
-  
+
     <div>
       <%= form.submit %>
     </div>
   <% end %>
-  

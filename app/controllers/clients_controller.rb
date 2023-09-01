@@ -1,6 +1,16 @@
 class ClientsController < ApplicationController
   before_action :set_client, only: %i[ show edit update destroy ]
-
+ 
+    include ActiveModel::Conversion
+  
+    def persisted?
+      false
+    end
+  
+    def id
+      nil
+    end
+  end
   # GET /clients or /clients.json
   def index
     @clients = Client.all
