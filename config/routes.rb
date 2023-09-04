@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'people/index'
   resources :clients
   
    root 'articles#index'
