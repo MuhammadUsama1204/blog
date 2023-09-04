@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   
   # resolve("Client") { [:profile] }
   
- 
+  resources :people
   resources :articles do
     resources :comments
 
-  resources:people
+
   end
 end
