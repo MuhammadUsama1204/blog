@@ -1,5 +1,10 @@
 <h1>People</h1>
 <ul>
+<%
+=begin%>
+ <%= byebug%> 
+<%
+=end%>
   <% @people.each do |person| %>
       <li>
         <%= link_to person.name,person%>

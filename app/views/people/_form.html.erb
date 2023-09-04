@@ -8,10 +8,18 @@
         <div><%= message %></div>
       <% end %>
     </div>
+    <div>
+    <%= form.label :gender %><br>
+    <%= form.select :gender, ["Male", "Female"], {}, { prompt: 'Select Gender' } %>
+    <% @people.errors.full_messages_for(:gender).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
      <div>
-      <%= form.label :gender %><br>
-      <%= form.text_field :gender %>
-      <% @people.errors.full_messages_for(:gender).each do |message| %>
+      <%= form.label :dob %><br>
+      <%= form.date_field :dob %>
+      <% @people.errors.full_messages_for(:dob).each do |message| %>
         <div><%= message %></div>
       <% end %>
     </div>
