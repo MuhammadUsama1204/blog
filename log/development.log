@@ -22694,3 +22694,292 @@ Migrating to AddColumnToPerson (20230904125822)
   [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPerson Create (0.2ms)[0m  [1m[32mINSERT INTO "people" ("name", "age", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ahmad"], ["age", 23], ["created_at", "2023-09-04 13:01:12.238598"], ["updated_at", "2023-09-04 13:01:12.238598"], ["gender", "Male"]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/people/index" for 127.0.0.1 at 2023-09-04 18:04:51 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PeopleController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 890)
+
+
+  
+SyntaxError (/home/yasir/Usama_Work/Projects/blog/app/models/person.rb:5: syntax error, unexpected [, expecting `do' or '{' or '('
+...:gender, presence: true, only ["Male","Female"]
+...                              ^
+):
+  
+app/models/person.rb:5: syntax error, unexpected [, expecting `do' or '{' or '('
+app/models/person.rb:5: syntax error, unexpected [, expecting `do' or '{' or '('
+app/models/person.rb:5: syntax error, unexpected [, expecting `do' or '{' or '('
+app/controllers/people_controller.rb:3:in `index'
+Started GET "/people/index" for 127.0.0.1 at 2023-09-04 18:07:55 +0500
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering people/index.html.erb within layouts/admin
+  [1m[36mPerson Load (0.3ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:3
+  Rendered people/index.html.erb within layouts/admin (Duration: 10.2ms | Allocations: 4266)
+  Rendered layout layouts/admin.html.erb (Duration: 30.2ms | Allocations: 18564)
+Completed 200 OK in 35ms (Views: 30.6ms | ActiveRecord: 1.2ms | Allocations: 20529)
+
+
+Started GET "/people/new" for 127.0.0.1 at 2023-09-04 18:07:59 +0500
+Processing by PeopleController#new as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 5.8ms | Allocations: 1722)
+  Rendered people/new.html.erb within layouts/admin (Duration: 7.8ms | Allocations: 1946)
+  Rendered layout layouts/admin.html.erb (Duration: 11.9ms | Allocations: 4138)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 4500)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:24 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 2.8ms | Allocations: 1332)
+  Rendered people/new.html.erb within layouts/admin (Duration: 3.0ms | Allocations: 1438)
+  Rendered layout layouts/admin.html.erb (Duration: 6.2ms | Allocations: 3622)
+Completed 422 Unprocessable Entity in 9ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 4922)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:25 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 3.5ms | Allocations: 1295)
+  Rendered people/new.html.erb within layouts/admin (Duration: 4.0ms | Allocations: 1358)
+  Rendered layout layouts/admin.html.erb (Duration: 9.9ms | Allocations: 3542)
+Completed 422 Unprocessable Entity in 15ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 4583)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:26 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 5.1ms | Allocations: 1295)
+  Rendered people/new.html.erb within layouts/admin (Duration: 5.7ms | Allocations: 1358)
+  Rendered layout layouts/admin.html.erb (Duration: 11.6ms | Allocations: 3542)
+Completed 422 Unprocessable Entity in 19ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 4604)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:26 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 8.2ms | Allocations: 1295)
+  Rendered people/new.html.erb within layouts/admin (Duration: 9.2ms | Allocations: 1358)
+  Rendered layout layouts/admin.html.erb (Duration: 18.6ms | Allocations: 3542)
+Completed 422 Unprocessable Entity in 26ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 4584)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:26 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 13.0ms | Allocations: 1295)
+  Rendered people/new.html.erb within layouts/admin (Duration: 14.8ms | Allocations: 1358)
+  Rendered layout layouts/admin.html.erb (Duration: 36.1ms | Allocations: 3542)
+Completed 422 Unprocessable Entity in 46ms (Views: 39.0ms | ActiveRecord: 0.0ms | Allocations: 4608)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:27 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 7.1ms | Allocations: 1295)
+  Rendered people/new.html.erb within layouts/admin (Duration: 7.8ms | Allocations: 1358)
+  Rendered layout layouts/admin.html.erb (Duration: 22.6ms | Allocations: 3542)
+Completed 422 Unprocessable Entity in 31ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 4574)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:27 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 8.2ms | Allocations: 1295)
+  Rendered people/new.html.erb within layouts/admin (Duration: 9.1ms | Allocations: 1358)
+  Rendered layout layouts/admin.html.erb (Duration: 22.5ms | Allocations: 3542)
+Completed 422 Unprocessable Entity in 30ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 4586)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:27 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 10.7ms | Allocations: 1295)
+  Rendered people/new.html.erb within layouts/admin (Duration: 11.7ms | Allocations: 1358)
+  Rendered layout layouts/admin.html.erb (Duration: 24.2ms | Allocations: 3542)
+Completed 422 Unprocessable Entity in 33ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 4592)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:27 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 6.8ms | Allocations: 1295)
+  Rendered people/new.html.erb within layouts/admin (Duration: 7.6ms | Allocations: 1358)
+  Rendered layout layouts/admin.html.erb (Duration: 22.2ms | Allocations: 3542)
+Completed 422 Unprocessable Entity in 31ms (Views: 23.9ms | ActiveRecord: 0.0ms | Allocations: 4599)
+
+
+Started GET "/people/new" for 127.0.0.1 at 2023-09-04 18:08:46 +0500
+Processing by PeopleController#new as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 1.7ms | Allocations: 1447)
+  Rendered people/new.html.erb within layouts/admin (Duration: 2.0ms | Allocations: 1521)
+  Rendered layout layouts/admin.html.erb (Duration: 16.3ms | Allocations: 15370)
+Completed 200 OK in 32ms (Views: 18.0ms | ActiveRecord: 0.6ms | Allocations: 18946)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:08:57 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 12.9ms | Allocations: 1561)
+  Rendered people/new.html.erb within layouts/admin (Duration: 13.8ms | Allocations: 1624)
+  Rendered layout layouts/admin.html.erb (Duration: 24.0ms | Allocations: 3808)
+Completed 422 Unprocessable Entity in 37ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 5083)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:10:07 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 11.9ms | Allocations: 2416)
+  Rendered people/new.html.erb within layouts/admin (Duration: 16.3ms | Allocations: 2723)
+  Rendered layout layouts/admin.html.erb (Duration: 29.0ms | Allocations: 5298)
+Completed 422 Unprocessable Entity in 41ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 6992)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:10:23 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"abc", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 1.6ms | Allocations: 1718)
+  Rendered people/new.html.erb within layouts/admin (Duration: 1.8ms | Allocations: 1795)
+  Rendered layout layouts/admin.html.erb (Duration: 13.4ms | Allocations: 15620)
+Completed 422 Unprocessable Entity in 20ms (Views: 14.5ms | ActiveRecord: 0.7ms | Allocations: 20195)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:14:21 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"male", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 2.0ms | Allocations: 1718)
+  Rendered people/new.html.erb within layouts/admin (Duration: 2.3ms | Allocations: 1795)
+  Rendered layout layouts/admin.html.erb (Duration: 12.1ms | Allocations: 15631)
+Completed 422 Unprocessable Entity in 26ms (Views: 13.3ms | ActiveRecord: 0.7ms | Allocations: 20279)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:14:22 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"male", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 5.7ms | Allocations: 1513)
+  Rendered people/new.html.erb within layouts/admin (Duration: 6.2ms | Allocations: 1576)
+  Rendered layout layouts/admin.html.erb (Duration: 11.0ms | Allocations: 3760)
+Completed 422 Unprocessable Entity in 17ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4938)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:14:23 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"male", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 5.0ms | Allocations: 1513)
+  Rendered people/new.html.erb within layouts/admin (Duration: 5.4ms | Allocations: 1576)
+  Rendered layout layouts/admin.html.erb (Duration: 9.4ms | Allocations: 3770)
+Completed 422 Unprocessable Entity in 15ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4832)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:14:23 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"male", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 5.0ms | Allocations: 1513)
+  Rendered people/new.html.erb within layouts/admin (Duration: 5.6ms | Allocations: 1576)
+  Rendered layout layouts/admin.html.erb (Duration: 12.3ms | Allocations: 3760)
+Completed 422 Unprocessable Entity in 21ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 4790)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:14:23 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"male", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 12.1ms | Allocations: 1513)
+  Rendered people/new.html.erb within layouts/admin (Duration: 12.9ms | Allocations: 1576)
+  Rendered layout layouts/admin.html.erb (Duration: 20.3ms | Allocations: 3760)
+Completed 422 Unprocessable Entity in 31ms (Views: 22.4ms | ActiveRecord: 0.0ms | Allocations: 4811)
+
+
+Started GET "/people/new" for 127.0.0.1 at 2023-09-04 18:14:25 +0500
+Processing by PeopleController#new as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 3.0ms | Allocations: 1166)
+  Rendered people/new.html.erb within layouts/admin (Duration: 3.3ms | Allocations: 1226)
+  Rendered layout layouts/admin.html.erb (Duration: 9.8ms | Allocations: 3418)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 3691)
+
+
+Started GET "/people/new" for 127.0.0.1 at 2023-09-04 18:14:43 +0500
+Processing by PeopleController#new as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 3.6ms | Allocations: 1438)
+  Rendered people/new.html.erb within layouts/admin (Duration: 3.9ms | Allocations: 1512)
+  Rendered layout layouts/admin.html.erb (Duration: 18.9ms | Allocations: 15350)
+Completed 200 OK in 28ms (Views: 21.2ms | ActiveRecord: 0.7ms | Allocations: 18918)
+
+
+Started POST "/people" for 127.0.0.1 at 2023-09-04 18:14:49 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"person", "gender"=>"male", "age"=>"23"}, "commit"=>"Create Person"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/people_controller.rb:14:in `create'
+  [1m[36mPerson Create (1.0ms)[0m  [1m[32mINSERT INTO "people" ("name", "age", "created_at", "updated_at", "gender") VALUES (?, ?, ?, ?, ?)[0m  [["name", "person"], ["age", 23], ["created_at", "2023-09-04 13:14:49.338306"], ["updated_at", "2023-09-04 13:14:49.338306"], ["gender", "male"]]
+  ↳ app/controllers/people_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/people_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/people/index
+Completed 302 Found in 30ms (ActiveRecord: 6.0ms | Allocations: 2635)
+
+
+Started GET "/people/index" for 127.0.0.1 at 2023-09-04 18:14:49 +0500
+Processing by PeopleController#index as TURBO_STREAM
+  Rendering layout layouts/admin.html.erb
+  Rendering people/index.html.erb within layouts/admin
+  [1m[36mPerson Load (0.5ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:3
+  Rendered people/index.html.erb within layouts/admin (Duration: 12.4ms | Allocations: 1373)
+  Rendered layout layouts/admin.html.erb (Duration: 58.1ms | Allocations: 3739)
+Completed 200 OK in 61ms (Views: 58.7ms | ActiveRecord: 0.5ms | Allocations: 4129)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddToPerson (20230904132305)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "people" ADD "dob" date[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230904132305"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
