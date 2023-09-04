@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   # resolve("Client") { [:profile] }
   
   resources :people
+ 
   resources :articles do
     resources :comments
-
 
   end
 end
