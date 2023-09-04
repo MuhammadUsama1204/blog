@@ -23664,3 +23664,14 @@ Processing by PeopleController#new as HTML
 Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 1.0ms | Allocations: 19499)
 
 
+Started POST "/people" for 127.0.0.1 at 2023-09-04 19:03:10 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Female", "dob"=>"2023-09-04", "age"=>"23"}, "commit"=>"Create Person"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 12.9ms | Allocations: 1452)
+  Rendered people/new.html.erb within layouts/admin (Duration: 14.0ms | Allocations: 1515)
+  Rendered layout layouts/admin.html.erb (Duration: 29.5ms | Allocations: 3699)
+Completed 422 Unprocessable Entity in 42ms (Views: 31.7ms | ActiveRecord: 0.0ms | Allocations: 5348)
+
+
