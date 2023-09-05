@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_05_115607) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_05_122410) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -36,8 +36,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_115607) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
-# Could not dump table "people" because of following StandardError
-#   Unknown type 'stringr' for column 'address'
+  create_table "people", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "gender"
+    t.date "dob"
+    t.string "address"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_people_on_user_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.text "username"
@@ -53,4 +62,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_115607) do
   end
 
   add_foreign_key "comments", "articles"
+  add_foreign_key "people", "users"
 end
