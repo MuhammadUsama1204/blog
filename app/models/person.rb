@@ -27,4 +27,5 @@ class Person < ApplicationRecord
     #     self.gender = gender.downcase if name.present?
     # end
   
-end
+endh
+
