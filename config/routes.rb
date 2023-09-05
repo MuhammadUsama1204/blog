@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   resources :clients
   
    root 'articles#index'
-  # get '/sessions/new', to: "sessions#new"
+  #  get '/sessions/new', to: "sessions#new"
   # get 'controllers/sessions', to: "sessions#create"
   
  
   # resource :profile 
-  # resources :users
+   resources :users
   
   
   # resolve("Client") { [:profile] }
