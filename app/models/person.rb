@@ -6,7 +6,7 @@ class Person < ApplicationRecord
     validates :name, presence: true
     #validates :gender,  inclusion: { in: %w(Male Female male female), message: "must be 'Male' or 'Female'" }   #%W is for short handarray without using string in qoutations
     validates :age, presence: true, numericality: { greater_than: 18}
-  
+
 
     private
     def usercheck
@@ -22,20 +22,20 @@ class Person < ApplicationRecord
     #     parsed_dob = nil
     #     # date_formats.each do |format|
     #     parsed_dob = system.Date rescue nil
-      
+
     #     if parsed_dob.nil?
     #       errors.add(:dob, "must be in a valid date format")
     #     end
-        
+
     #     if parsed_dob == Date.current
-            
+
     #       errors.add(:dob, "should not be today's date")
     #     end
     #   end
-      
+
 
     def custom_dob_check
-        
+
         if self.dob?
             age= Date.today.year - self.dob.year
         end
@@ -44,15 +44,15 @@ class Person < ApplicationRecord
         end
 
         # parsed_dob = Date.strptime(dob, "%b %d %Y --") rescue nil
-         
+
         # if parsed_dob == Date.current
         #     errors.add(:dob, "should not be today's date")
         # end
-        
+
     end
-    
+
     # def user_gender
     #     self.gender = gender.downcase if name.present?
     # end
-  
+
 end
