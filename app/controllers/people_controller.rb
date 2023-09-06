@@ -9,7 +9,7 @@ class PeopleController < ApplicationController
   def show
     @people=Person.find_by(params[:id])
   end
-  def create 
+  def create
     @people=Person.new(people_params)
     if @people.save
       flash[:success] = "Successfully Added"
@@ -38,7 +38,7 @@ class PeopleController < ApplicationController
   end
   private
     def people_params
-      params.require(:person).permit(:name, :age, :gender, :dob)
+      params.require(:person).permit(:name, :gender, :date_of_birth)
     end
 
 end

@@ -1,15 +1,15 @@
 class ArticlesController < ApplicationController
 
-  
+
   def default_url_options
     { locale: I18n.locale }
   end
- 
- 
+
+
   def index
     @articles = Article.all
   end
- 
+
 
   def show
     @article = Article.find(params[:id])
@@ -39,8 +39,8 @@ class ArticlesController < ApplicationController
 
     if @article.update(article_params)
       flash[:success] = "Successfully Updated"
-      redirect_to root_path
-      
+      redirect_to articles_path
+
     else
       render :edit, status: :unprocessable_entity
     end
@@ -57,8 +57,3 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(:title, :body,:status)
     end
 end
-
-
-
-
-  

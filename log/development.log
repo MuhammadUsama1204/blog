@@ -25486,3 +25486,1046 @@ Processing by ArticlesController#index as TURBO_STREAM
 Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms | Allocations: 4826)
 
 
+Started GET "/" for 127.0.0.1 at 2023-09-06 14:24:00 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 19.9ms | Allocations: 8604)
+  Rendered layout layouts/admin.html.erb (Duration: 123.9ms | Allocations: 43462)
+Completed 200 OK in 148ms (Views: 125.2ms | ActiveRecord: 2.6ms | Allocations: 49906)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:24:02 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.2ms | Allocations: 32)
+  Rendered comments/_form_comment.html.erb (Duration: 26.7ms | Allocations: 7050)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 87.4ms | Allocations: 12706)
+  Rendered layout layouts/admin.html.erb (Duration: 92.3ms | Allocations: 15007)
+Completed 200 OK in 104ms (Views: 90.4ms | ActiveRecord: 3.7ms | Allocations: 17021)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:24:04 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+Filter chain halted as #<Proc:0x00007fae773a8360 /home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_controller/metal/http_authentication.rb:79> rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 121)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:24:13 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 9.4ms | Allocations: 1881)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 11.0ms | Allocations: 2147)
+  Rendered layout layouts/admin.html.erb (Duration: 17.7ms | Allocations: 4333)
+Completed 200 OK in 26ms (Views: 18.8ms | ActiveRecord: 0.7ms | Allocations: 5261)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:24:35 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"the", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+Filter chain halted as #<Proc:0x00007fae773a8360 /home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_controller/metal/http_authentication.rb:79> rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 403)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:24:35 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"the", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["body", "aaaaaaaaaaaaaaaaaaaaaa"], ["updated_at", "2023-09-06 09:24:35.505726"], ["id", 38]]
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/?locale=en
+Completed 302 Found in 11ms (ActiveRecord: 2.9ms | Allocations: 4381)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at 2023-09-06 14:24:35 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 3.1ms | Allocations: 2191)
+  Rendered layout layouts/admin.html.erb (Duration: 5.9ms | Allocations: 4684)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 5024)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:26:37 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 19)
+  Rendered comments/_form_comment.html.erb (Duration: 5.9ms | Allocations: 3779)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 13.1ms | Allocations: 7578)
+  Rendered layout layouts/admin.html.erb (Duration: 27.5ms | Allocations: 21410)
+Completed 200 OK in 41ms (Views: 27.4ms | ActiveRecord: 3.0ms | Allocations: 26672)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:26:40 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 13.1ms | Allocations: 1354)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 14.4ms | Allocations: 1416)
+  Rendered layout layouts/admin.html.erb (Duration: 30.6ms | Allocations: 3602)
+Completed 200 OK in 45ms (Views: 33.8ms | ActiveRecord: 0.5ms | Allocations: 4397)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:26:44 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"usama", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mArticle Update (0.2ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "usama"], ["updated_at", "2023-09-06 09:26:44.597049"], ["id", 38]]
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/articles/38?locale=en
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms | Allocations: 3224)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:26:44 +0500
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered comments/_form_comment.html.erb (Duration: 1.9ms | Allocations: 1341)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 4.1ms | Allocations: 2351)
+  Rendered layout layouts/admin.html.erb (Duration: 7.3ms | Allocations: 4535)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 5248)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:26:58 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 12.9ms | Allocations: 1606)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 13.4ms | Allocations: 1680)
+  Rendered layout layouts/admin.html.erb (Duration: 62.5ms | Allocations: 15503)
+Completed 200 OK in 88ms (Views: 63.5ms | ActiveRecord: 1.0ms | Allocations: 20786)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:27:02 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"usama kahn", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mArticle Update (0.7ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "usama kahn"], ["updated_at", "2023-09-06 09:27:02.288484"], ["id", 38]]
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/articles?locale=en
+Completed 302 Found in 21ms (ActiveRecord: 4.9ms | Allocations: 3313)
+
+
+Started GET "/articles?locale=en" for 127.0.0.1 at 2023-09-06 14:27:02 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 3.9ms | Allocations: 2268)
+  Rendered layout layouts/admin.html.erb (Duration: 7.5ms | Allocations: 4630)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 4900)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:28:30 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 19)
+  Rendered comments/_form_comment.html.erb (Duration: 7.6ms | Allocations: 3815)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 14.8ms | Allocations: 7616)
+  Rendered layout layouts/admin.html.erb (Duration: 31.9ms | Allocations: 21432)
+Completed 200 OK in 40ms (Views: 32.1ms | ActiveRecord: 1.5ms | Allocations: 26697)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:28:32 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 2.5ms | Allocations: 1359)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 2.9ms | Allocations: 1421)
+  Rendered layout layouts/admin.html.erb (Duration: 10.0ms | Allocations: 3606)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.2ms | Allocations: 4383)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:28:38 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"usama raja", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "usama raja"], ["updated_at", "2023-09-06 09:28:38.375510"], ["id", 38]]
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/articles?locale=en
+Completed 302 Found in 21812ms (ActiveRecord: 3.0ms | Allocations: 53681)
+
+
+Started GET "/articles?locale=en" for 127.0.0.1 at 2023-09-06 14:29:00 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 13.8ms | Allocations: 2939)
+  Rendered layout layouts/admin.html.erb (Duration: 27.4ms | Allocations: 5952)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 1.1ms | Allocations: 6520)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:29:44 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 33)
+  Rendered comments/_form_comment.html.erb (Duration: 16.5ms | Allocations: 7273)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 28.5ms | Allocations: 13316)
+  Rendered layout layouts/admin.html.erb (Duration: 77.9ms | Allocations: 47386)
+Completed 200 OK in 104ms (Views: 80.0ms | ActiveRecord: 1.3ms | Allocations: 60649)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:29:46 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 8.0ms | Allocations: 2046)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 9.9ms | Allocations: 2303)
+  Rendered layout layouts/admin.html.erb (Duration: 15.2ms | Allocations: 4594)
+Completed 200 OK in 25ms (Views: 16.7ms | ActiveRecord: 0.7ms | Allocations: 5566)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:29:49 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"usama rajaa", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mArticle Update (0.6ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "usama rajaa"], ["updated_at", "2023-09-06 09:29:49.319552"], ["id", 38]]
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/articles?locale=en
+Completed 302 Found in 47248ms (ActiveRecord: 3.9ms | Allocations: 149338)
+
+
+Started GET "/articles?locale=en" for 127.0.0.1 at 2023-09-06 14:31:01 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 30.3ms | Allocations: 3288)
+  Rendered layout layouts/admin.html.erb (Duration: 41.7ms | Allocations: 6283)
+Completed 200 OK in 54ms (Views: 44.7ms | ActiveRecord: 2.7ms | Allocations: 7028)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:31:27 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 33)
+  Rendered comments/_form_comment.html.erb (Duration: 14.5ms | Allocations: 7267)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 25.9ms | Allocations: 13312)
+  Rendered layout layouts/admin.html.erb (Duration: 81.7ms | Allocations: 47436)
+Completed 200 OK in 108ms (Views: 83.3ms | ActiveRecord: 1.2ms | Allocations: 60704)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:31:29 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 19.5ms | Allocations: 2037)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 22.8ms | Allocations: 2294)
+  Rendered layout layouts/admin.html.erb (Duration: 39.1ms | Allocations: 4585)
+Completed 200 OK in 51ms (Views: 41.1ms | ActiveRecord: 0.5ms | Allocations: 5557)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:31:31 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"usama rajaaa", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mArticle Update (1.2ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "usama rajaaa"], ["updated_at", "2023-09-06 09:31:31.225047"], ["id", 38]]
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/articles?locale=en
+Completed 302 Found in 21368ms (ActiveRecord: 6.3ms | Allocations: 58835)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:32:54 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"usama rajaaa", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+Redirected to http://127.0.0.1:3000/articles#index
+Completed 302 Found in 28ms (ActiveRecord: 0.6ms | Allocations: 12245)
+
+
+Started GET "/articles" for 127.0.0.1 at 2023-09-06 14:32:54 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 3.8ms | Allocations: 3107)
+  Rendered layout layouts/admin.html.erb (Duration: 47.6ms | Allocations: 37407)
+Completed 200 OK in 53ms (Views: 49.3ms | ActiveRecord: 0.3ms | Allocations: 40256)
+
+
+Started GET "/articles" for 127.0.0.1 at 2023-09-06 14:32:56 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 5.9ms | Allocations: 2123)
+  Rendered layout layouts/admin.html.erb (Duration: 10.4ms | Allocations: 4515)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 4811)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:32:58 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 32)
+  Rendered comments/_form_comment.html.erb (Duration: 15.0ms | Allocations: 7022)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 37.3ms | Allocations: 12677)
+  Rendered layout layouts/admin.html.erb (Duration: 40.1ms | Allocations: 14977)
+Completed 200 OK in 46ms (Views: 40.3ms | ActiveRecord: 1.2ms | Allocations: 15810)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:33:00 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 15.4ms | Allocations: 1887)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 18.4ms | Allocations: 2153)
+  Rendered layout layouts/admin.html.erb (Duration: 31.1ms | Allocations: 4339)
+Completed 200 OK in 42ms (Views: 33.0ms | ActiveRecord: 0.8ms | Allocations: 5259)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:33:06 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"usama qazi", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mArticle Update (0.4ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "usama qazi"], ["updated_at", "2023-09-06 09:33:06.439798"], ["id", 38]]
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/articles#index
+Completed 302 Found in 19ms (ActiveRecord: 3.4ms | Allocations: 3694)
+
+
+Started GET "/articles" for 127.0.0.1 at 2023-09-06 14:33:06 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 4.0ms | Allocations: 2170)
+  Rendered layout layouts/admin.html.erb (Duration: 7.0ms | Allocations: 4524)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms | Allocations: 4780)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:33:35 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 19)
+  Rendered comments/_form_comment.html.erb (Duration: 5.6ms | Allocations: 3799)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 13.1ms | Allocations: 7599)
+  Rendered layout layouts/admin.html.erb (Duration: 26.0ms | Allocations: 21433)
+Completed 200 OK in 35ms (Views: 26.7ms | ActiveRecord: 1.7ms | Allocations: 26711)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:33:37 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 7.9ms | Allocations: 1332)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 8.7ms | Allocations: 1394)
+  Rendered layout layouts/admin.html.erb (Duration: 20.8ms | Allocations: 3579)
+Completed 200 OK in 27ms (Views: 22.3ms | ActiveRecord: 0.3ms | Allocations: 4357)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:33:40 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"usama qazii", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mArticle Update (0.5ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "usama qazii"], ["updated_at", "2023-09-06 09:33:40.712277"], ["id", 38]]
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/articles?locale=en
+Completed 302 Found in 13ms (ActiveRecord: 3.4ms | Allocations: 3207)
+
+
+Started GET "/articles?locale=en" for 127.0.0.1 at 2023-09-06 14:33:40 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 5.4ms | Allocations: 2224)
+  Rendered layout layouts/admin.html.erb (Duration: 8.1ms | Allocations: 4608)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 4864)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:33:48 +0500
+Processing by ArticlesController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 19)
+  Rendered comments/_form_comment.html.erb (Duration: 36.6ms | Allocations: 3805)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 52.7ms | Allocations: 7604)
+  Rendered layout layouts/admin.html.erb (Duration: 65.8ms | Allocations: 21431)
+Completed 200 OK in 91ms (Views: 66.2ms | ActiveRecord: 1.5ms | Allocations: 26673)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:33:52 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 3.7ms | Allocations: 1345)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 4.0ms | Allocations: 1407)
+  Rendered layout layouts/admin.html.erb (Duration: 8.8ms | Allocations: 3593)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 4388)
+
+
+Started PATCH "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:33:56 +0500
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"usama qazi", "body"=>"aaaaaaaaaaaaaaaaaaaaaa", "status"=>"public"}, "commit"=>"Update Article", "locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "usama qazi"], ["updated_at", "2023-09-06 09:33:56.891410"], ["id", 38]]
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:40:in `update'
+Redirected to http://127.0.0.1:3000/articles/38?locale=en
+Completed 302 Found in 13ms (ActiveRecord: 2.7ms | Allocations: 3197)
+
+
+Started GET "/articles/38?locale=en" for 127.0.0.1 at 2023-09-06 14:33:56 +0500
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:15:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/show.html.erb within layouts/admin
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 38]]
+  ↳ app/views/articles/show.html.erb:14
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 13)
+  Rendered comments/_form_comment.html.erb (Duration: 3.0ms | Allocations: 1342)
+  Rendered articles/show.html.erb within layouts/admin (Duration: 8.8ms | Allocations: 2351)
+  Rendered layout layouts/admin.html.erb (Duration: 13.1ms | Allocations: 4535)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 5248)
+
+
+Started GET "/articles/38/edit?locale=en" for 127.0.0.1 at 2023-09-06 14:33:58 +0500
+Processing by ArticlesController#edit as HTML
+  Parameters: {"locale"=>"en", "id"=>"38"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:34:in `edit'
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/edit.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 4.6ms | Allocations: 1318)
+  Rendered articles/edit.html.erb within layouts/admin (Duration: 5.1ms | Allocations: 1378)
+  Rendered layout layouts/admin.html.erb (Duration: 10.6ms | Allocations: 3562)
+Completed 200 OK in 18ms (Views: 11.8ms | ActiveRecord: 0.6ms | Allocations: 4285)
+
+
+Started GET "/?locale=en" for ::1 at 2023-09-06 14:54:59 +0500
+Processing by ArticlesController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 9.6ms | Allocations: 4041)
+  Rendered layout layouts/admin.html.erb (Duration: 25.0ms | Allocations: 18021)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.8ms | Allocations: 20182)
+
+
+Started GET "/articles/new?locale=en" for ::1 at 2023-09-06 14:55:01 +0500
+Processing by ArticlesController#new as HTML
+  Parameters: {"locale"=>"en"}
+Filter chain halted as #<Proc:0x00007fe8a404aa30 /home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_controller/metal/http_authentication.rb:79> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 110)
+
+
+Started GET "/articles/new?locale=en" for ::1 at 2023-09-06 14:55:07 +0500
+Processing by ArticlesController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/new.html.erb within layouts/admin
+  Rendered articles/_form.html.erb (Duration: 3.5ms | Allocations: 1401)
+  Rendered articles/new.html.erb within layouts/admin (Duration: 4.9ms | Allocations: 1608)
+  Rendered layout layouts/admin.html.erb (Duration: 10.5ms | Allocations: 3800)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 4172)
+
+
+Started POST "/articles?locale=en" for ::1 at 2023-09-06 14:55:17 +0500
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"laptops", "body"=>"fdhvufiguifh", "status"=>"public"}, "commit"=>"Create Article", "locale"=>"en"}
+Filter chain halted as #<Proc:0x00007fe8a404aa30 /home/yasir/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_controller/metal/http_authentication.rb:79> rendered or redirected
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started POST "/articles?locale=en" for ::1 at 2023-09-06 14:55:17 +0500
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"laptops", "body"=>"fdhvufiguifh", "status"=>"public"}, "commit"=>"Create Article", "locale"=>"en"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:25:in `create'
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?)[0m  [["title", "laptops"], ["body", "fdhvufiguifh"], ["created_at", "2023-09-06 09:55:17.813980"], ["updated_at", "2023-09-06 09:55:17.813980"], ["status", "public"]]
+  ↳ app/controllers/articles_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:25:in `create'
+Redirected to http://localhost:3000/?locale=en
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms | Allocations: 2718)
+
+
+Started GET "/?locale=en" for ::1 at 2023-09-06 14:55:17 +0500
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 3.6ms | Allocations: 2190)
+  Rendered layout layouts/admin.html.erb (Duration: 6.8ms | Allocations: 4598)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 4855)
+
+
+Started GET "/?locale=en" for ::1 at 2023-09-06 14:57:21 +0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering articles/index.html.erb within layouts/admin
+  [1m[36mArticle Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "articles" WHERE "articles"."status" = ?[0m  [["status", "public"]]
+  ↳ app/models/concerns/visible.rb:12:in `public_count'
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:6
+  Rendered articles/index.html.erb within layouts/admin (Duration: 19.7ms | Allocations: 8684)
+  Rendered layout layouts/admin.html.erb (Duration: 101.1ms | Allocations: 43177)
+Completed 200 OK in 126ms (Views: 107.2ms | ActiveRecord: 1.0ms | Allocations: 49702)
+
+
+Started GET "/people?locale=en" for ::1 at 2023-09-06 14:57:23 +0500
+Processing by PeopleController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/index.html.erb within layouts/admin
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:8
+  Rendered people/index.html.erb within layouts/admin (Duration: 30.2ms | Allocations: 5767)
+  Rendered layout layouts/admin.html.erb (Duration: 35.2ms | Allocations: 8394)
+Completed 200 OK in 49ms (Views: 38.4ms | ActiveRecord: 2.5ms | Allocations: 9770)
+
+
+Started GET "/people?locale=en" for ::1 at 2023-09-06 14:57:32 +0500
+Processing by PeopleController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/index.html.erb within layouts/admin
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:8
+  Rendered people/index.html.erb within layouts/admin (Duration: 14.4ms | Allocations: 1138)
+  Rendered layout layouts/admin.html.erb (Duration: 28.8ms | Allocations: 3511)
+Completed 200 OK in 33ms (Views: 30.4ms | ActiveRecord: 0.7ms | Allocations: 3790)
+
+
+Started GET "/people/15" for ::1 at 2023-09-06 14:57:32 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (15) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 31.4ms | Allocations: 6199)
+  Rendered layout layouts/admin.html.erb (Duration: 32.6ms | Allocations: 6292)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.6ms | Allocations: 7795)
+
+
+  
+ActionView::Template::Error (undefined method `age' for #<Person id: 8, name: "Burraq", created_at: "2023-09-04 08:26:30.271144000 +0000", updated_at: "2023-09-04 08:26:30.271144000 +0000", gender: nil, date_of_birth: nil, address: nil, user_id: nil>):
+    1: <h1><%= @people.name %></h1>
+    2: 
+    3: <p><%= @people.age %></p>
+    4: 
+    5: 
+    6: 
+  
+app/views/people/show.html.erb:3
+Started GET "/people/15" for ::1 at 2023-09-06 14:58:00 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (15) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 2.0ms | Allocations: 348)
+  Rendered layout layouts/admin.html.erb (Duration: 9.3ms | Allocations: 3176)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.2ms | Allocations: 4729)
+
+
+Started GET "/people/15" for ::1 at 2023-09-06 14:58:27 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (15) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 6.0ms | Allocations: 362)
+  Rendered layout layouts/admin.html.erb (Duration: 13.9ms | Allocations: 3166)
+Completed 200 OK in 23ms (Views: 17.6ms | ActiveRecord: 0.2ms | Allocations: 4728)
+
+
+Started GET "/people/15" for ::1 at 2023-09-06 14:58:37 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPerson Load (0.6ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (15) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 20.4ms | Allocations: 6013)
+  Rendered layout layouts/admin.html.erb (Duration: 21.5ms | Allocations: 6102)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.6ms | Allocations: 7651)
+
+
+  
+ActionView::Template::Error (undefined method `Date_of_birth' for #<Person id: 8, name: "Burraq", created_at: "2023-09-04 08:26:30.271144000 +0000", updated_at: "2023-09-04 08:26:30.271144000 +0000", gender: nil, date_of_birth: nil, address: nil, user_id: nil>
+Did you mean?  date_of_birth
+               date_of_birth?
+               date_of_birth=
+               date_of_birth_was):
+    1: <h1><%= @people.name %></h1>
+    2: 
+    3: Date of birth:<p><%= @people.Date_of_birth %></p>
+    4: 
+    5: 
+    6: 
+  
+app/views/people/show.html.erb:3
+Started GET "/people/15" for ::1 at 2023-09-06 14:58:37 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPerson Load (0.7ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (15) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 41.3ms | Allocations: 5737)
+  Rendered layout layouts/admin.html.erb (Duration: 42.2ms | Allocations: 5816)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.7ms | Allocations: 6759)
+
+
+  
+ActionView::Template::Error (undefined method `Date_of_birth' for #<Person id: 8, name: "Burraq", created_at: "2023-09-04 08:26:30.271144000 +0000", updated_at: "2023-09-04 08:26:30.271144000 +0000", gender: nil, date_of_birth: nil, address: nil, user_id: nil>
+Did you mean?  date_of_birth
+               date_of_birth?
+               date_of_birth=
+               date_of_birth_was):
+    1: <h1><%= @people.name %></h1>
+    2: 
+    3: Date of birth:<p><%= @people.Date_of_birth %></p>
+    4: 
+    5: 
+    6: 
+  
+app/views/people/show.html.erb:3
+Started GET "/people/15" for ::1 at 2023-09-06 14:59:32 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (15) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 0.9ms | Allocations: 359)
+  Rendered layout layouts/admin.html.erb (Duration: 5.9ms | Allocations: 3175)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 4608)
+
+
+Started GET "/people/15" for ::1 at 2023-09-06 14:59:33 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPerson Load (0.8ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (15) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 2.0ms | Allocations: 106)
+  Rendered layout layouts/admin.html.erb (Duration: 19.8ms | Allocations: 2449)
+Completed 200 OK in 31ms (Views: 21.8ms | ActiveRecord: 0.8ms | Allocations: 3419)
+
+
+Started GET "/people/15" for ::1 at 2023-09-06 14:59:33 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (15) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 0.4ms | Allocations: 106)
+  Rendered layout layouts/admin.html.erb (Duration: 6.9ms | Allocations: 2461)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 3314)
+
+
+Started GET "/people/15" for ::1 at 2023-09-06 14:59:34 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mPerson Load (0.9ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (15) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 1.3ms | Allocations: 106)
+  Rendered layout layouts/admin.html.erb (Duration: 25.7ms | Allocations: 2467)
+Completed 200 OK in 41ms (Views: 28.2ms | ActiveRecord: 0.9ms | Allocations: 3320)
+
+
+Started GET "/people?locale=en" for ::1 at 2023-09-06 14:59:41 +0500
+Processing by PeopleController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering layout layouts/admin.html.erb
+  Rendering people/index.html.erb within layouts/admin
+  [1m[36mPerson Load (0.2ms)[0m  [1m[34mSELECT "people".* FROM "people"[0m
+  ↳ app/views/people/index.html.erb:8
+  Rendered people/index.html.erb within layouts/admin (Duration: 4.7ms | Allocations: 1341)
+  Rendered layout layouts/admin.html.erb (Duration: 17.7ms | Allocations: 3725)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.2ms | Allocations: 4030)
+
+
+Started GET "/people/19" for ::1 at 2023-09-06 14:59:42 +0500
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mPerson Load (0.4ms)[0m  [1m[34mSELECT "people".* FROM "people" WHERE (19) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/people_controller.rb:10:in `show'
+  Rendering layout layouts/admin.html.erb
+  Rendering people/show.html.erb within layouts/admin
+  Rendered people/show.html.erb within layouts/admin (Duration: 1.0ms | Allocations: 106)
+  Rendered layout layouts/admin.html.erb (Duration: 10.2ms | Allocations: 2464)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 0.4ms | Allocations: 3319)
+
+
+Started GET "/people/new" for ::1 at 2023-09-06 14:59:45 +0500
+Processing by PeopleController#new as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 37.6ms | Allocations: 5758)
+  Rendered people/new.html.erb within layouts/admin (Duration: 40.0ms | Allocations: 5997)
+  Rendered layout layouts/admin.html.erb (Duration: 49.7ms | Allocations: 8309)
+Completed 200 OK in 54ms (Views: 50.7ms | ActiveRecord: 0.0ms | Allocations: 8714)
+
+
+Started POST "/people" for ::1 at 2023-09-06 14:59:52 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"Daniyal", "gender"=>"Male", "dob"=>"2023-09-01", "age"=>"23"}, "commit"=>"Create Person"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1499)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'age' for Person.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/people_controller.rb:13:in `create'
+Started GET "/people/new" for ::1 at 2023-09-06 15:00:04 +0500
+Processing by PeopleController#new as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 5.4ms | Allocations: 1887)
+  Rendered people/new.html.erb within layouts/admin (Duration: 6.4ms | Allocations: 2143)
+  Rendered layout layouts/admin.html.erb (Duration: 11.2ms | Allocations: 4732)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 5593)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:00:10 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2023-09-01"}, "commit"=>"Create Person"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1276)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'dob' for Person.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/people_controller.rb:13:in `create'
+Started GET "/people/new" for ::1 at 2023-09-06 15:00:45 +0500
+Processing by PeopleController#new as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 4.4ms | Allocations: 1537)
+  Rendered people/new.html.erb within layouts/admin (Duration: 4.6ms | Allocations: 1611)
+  Rendered layout layouts/admin.html.erb (Duration: 27.8ms | Allocations: 15484)
+Completed 200 OK in 37ms (Views: 29.5ms | ActiveRecord: 0.8ms | Allocations: 19505)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:00:49 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2023-09-02"}, "commit"=>"Create Person"}
+[31mUnpermitted parameter: :dob. Context: { controller: PeopleController, action: create, request: #<ActionDispatch::Request:0x00007f5c9696d5a8>, params: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2023-09-02"}, "commit"=>"Create Person", "controller"=>"people", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 7237)
+
+
+  
+NoMethodError (undefined method `age' for #<Person id: nil, name: "USAMA", created_at: nil, updated_at: nil, gender: "Male", date_of_birth: nil, address: nil, user_id: nil>):
+  
+app/controllers/people_controller.rb:14:in `create'
+Started GET "/people/new" for ::1 at 2023-09-06 15:01:33 +0500
+Processing by PeopleController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 946)
+
+
+  
+SyntaxError (/home/yasir/Usama_Work/Projects/blog/app/models/person.rb:8: syntax error, unexpected ':', expecting `end'
+    validates :presence: true, numericality: { greate...
+                       ^
+/home/yasir/Usama_Work/Projects/blog/app/models/person.rb:8: Can't assign to true
+    validates :presence: true, numericality: { greater_tha...
+                         ^~~~
+):
+  
+app/models/person.rb:8: syntax error, unexpected ':', expecting `end'
+app/models/person.rb:8: Can't assign to true
+app/models/person.rb:8: syntax error, unexpected ':', expecting `end'
+app/models/person.rb:8: Can't assign to true
+app/models/person.rb:8: syntax error, unexpected ':', expecting `end'
+app/models/person.rb:8: Can't assign to true
+app/controllers/people_controller.rb:6:in `new'
+Started GET "/people/new" for ::1 at 2023-09-06 15:01:49 +0500
+Processing by PeopleController#new as HTML
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 4.0ms | Allocations: 1539)
+  Rendered people/new.html.erb within layouts/admin (Duration: 4.6ms | Allocations: 1613)
+  Rendered layout layouts/admin.html.erb (Duration: 33.8ms | Allocations: 15459)
+Completed 200 OK in 60ms (Views: 38.0ms | ActiveRecord: 1.8ms | Allocations: 19440)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:01:54 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2023-09-02"}, "commit"=>"Create Person"}
+[31mUnpermitted parameter: :dob. Context: { controller: PeopleController, action: create, request: #<ActionDispatch::Request:0x00007f5c944e34a8>, params: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2023-09-02"}, "commit"=>"Create Person", "controller"=>"people", "action"=>"create"} }[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 8.5ms | Allocations: 1242)
+  Rendered people/new.html.erb within layouts/admin (Duration: 9.6ms | Allocations: 1348)
+  Rendered layout layouts/admin.html.erb (Duration: 26.0ms | Allocations: 3532)
+Completed 422 Unprocessable Entity in 36ms (Views: 28.2ms | ActiveRecord: 0.0ms | Allocations: 5242)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:02:00 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2023-03-10"}, "commit"=>"Create Person"}
+[31mUnpermitted parameter: :dob. Context: { controller: PeopleController, action: create, request: #<ActionDispatch::Request:0x00007f5c943e1708>, params: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2023-03-10"}, "commit"=>"Create Person", "controller"=>"people", "action"=>"create"} }[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 8.1ms | Allocations: 1212)
+  Rendered people/new.html.erb within layouts/admin (Duration: 9.2ms | Allocations: 1275)
+  Rendered layout layouts/admin.html.erb (Duration: 22.9ms | Allocations: 3459)
+Completed 422 Unprocessable Entity in 32ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 4927)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:02:14 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2005-02-03"}, "commit"=>"Create Person"}
+[31mUnpermitted parameter: :dob. Context: { controller: PeopleController, action: create, request: #<ActionDispatch::Request:0x00007f5c9436a978>, params: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2005-02-03"}, "commit"=>"Create Person", "controller"=>"people", "action"=>"create"} }[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 6.9ms | Allocations: 1211)
+  Rendered people/new.html.erb within layouts/admin (Duration: 7.8ms | Allocations: 1274)
+  Rendered layout layouts/admin.html.erb (Duration: 24.1ms | Allocations: 3458)
+Completed 422 Unprocessable Entity in 35ms (Views: 26.2ms | ActiveRecord: 0.0ms | Allocations: 4934)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:02:30 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2002-02-27"}, "commit"=>"Create Person"}
+[31mUnpermitted parameter: :dob. Context: { controller: PeopleController, action: create, request: #<ActionDispatch::Request:0x00007f5c942e9a30>, params: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>"2002-02-27"}, "commit"=>"Create Person", "controller"=>"people", "action"=>"create"} }[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 3.3ms | Allocations: 1212)
+  Rendered people/new.html.erb within layouts/admin (Duration: 3.6ms | Allocations: 1275)
+  Rendered layout layouts/admin.html.erb (Duration: 6.7ms | Allocations: 3459)
+Completed 422 Unprocessable Entity in 12ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:02:30 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>""}, "commit"=>"Create Person"}
+[31mUnpermitted parameter: :dob. Context: { controller: PeopleController, action: create, request: #<ActionDispatch::Request:0x00007f5c9425ee08>, params: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>""}, "commit"=>"Create Person", "controller"=>"people", "action"=>"create"} }[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 16.4ms | Allocations: 1211)
+  Rendered people/new.html.erb within layouts/admin (Duration: 17.0ms | Allocations: 1274)
+  Rendered layout layouts/admin.html.erb (Duration: 21.5ms | Allocations: 3473)
+Completed 422 Unprocessable Entity in 29ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 4953)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:02:30 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>""}, "commit"=>"Create Person"}
+[31mUnpermitted parameter: :dob. Context: { controller: PeopleController, action: create, request: #<ActionDispatch::Request:0x00007f5c96959328>, params: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>""}, "commit"=>"Create Person", "controller"=>"people", "action"=>"create"} }[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 4.4ms | Allocations: 1211)
+  Rendered people/new.html.erb within layouts/admin (Duration: 5.1ms | Allocations: 1274)
+  Rendered layout layouts/admin.html.erb (Duration: 12.2ms | Allocations: 3458)
+Completed 422 Unprocessable Entity in 19ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 4958)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:02:30 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>""}, "commit"=>"Create Person"}
+[31mUnpermitted parameter: :dob. Context: { controller: PeopleController, action: create, request: #<ActionDispatch::Request:0x00007f5c96778798>, params: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>""}, "commit"=>"Create Person", "controller"=>"people", "action"=>"create"} }[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 7.4ms | Allocations: 1211)
+  Rendered people/new.html.erb within layouts/admin (Duration: 8.6ms | Allocations: 1274)
+  Rendered layout layouts/admin.html.erb (Duration: 23.2ms | Allocations: 3458)
+Completed 422 Unprocessable Entity in 33ms (Views: 26.2ms | ActiveRecord: 0.0ms | Allocations: 4930)
+
+
+Started POST "/people" for ::1 at 2023-09-06 15:02:31 +0500
+Processing by PeopleController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>""}, "commit"=>"Create Person"}
+[31mUnpermitted parameter: :dob. Context: { controller: PeopleController, action: create, request: #<ActionDispatch::Request:0x00007f5c94e10cd8>, params: {"authenticity_token"=>"[FILTERED]", "person"=>{"name"=>"USAMA", "gender"=>"Male", "dob"=>""}, "commit"=>"Create Person", "controller"=>"people", "action"=>"create"} }[0m
+  Rendering layout layouts/admin.html.erb
+  Rendering people/new.html.erb within layouts/admin
+  Rendered people/_form.html.erb (Duration: 9.2ms | Allocations: 1211)
+  Rendered people/new.html.erb within layouts/admin (Duration: 10.4ms | Allocations: 1274)
+  Rendered layout layouts/admin.html.erb (Duration: 23.4ms | Allocations: 3463)
+Completed 422 Unprocessable Entity in 34ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 4940)
+
+
