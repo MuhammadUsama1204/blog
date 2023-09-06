@@ -17,8 +17,8 @@ class Person < ApplicationRecord
     def custom_dob_check
 
         parsed_dob = Date.strptime(dob, "%b %d %Y --") rescue nil
-        if !parsed_dob || parsed_dob == Date.current
-            errors.add(:dob, "should not be today's date")
+        if !parsed_dob || parsed_dob == Date.current.year
+            errors.add(:dob, "You are under 18")
         end
 
     end
