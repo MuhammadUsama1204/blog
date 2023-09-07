@@ -1,11 +1,14 @@
 class Person < ApplicationRecord
     before_create :usercheck
-    # around_create :user_gender
+    # /around_create :user_gender
     before_update :usercheck
     validate :custom_dob_check
     validates :name, presence: true
+    # validates :name, absence: false
+    # validates :name, length: { is: 5 }, allow_blank: true
+    validates :name, exclusion: { in: ['www'],message: "www is reserved." }
     #validates :gender,  inclusion: { in: %w(Male Female male female), message: "must be 'Male' or 'Female'" }   #%W is for short handarray without using string in qoutations
-    validates :age, presence: true, numericality: { greater_than: 18}
+    # validates :age, presence: true, numericality: { greater_than: 18}
 
 
     private
@@ -39,7 +42,7 @@ class Person < ApplicationRecord
         if self.dob?
             age= Date.today.year - self.dob.year
         end
-        if age <19
+        if age < 19
             errors.add(:dob, "you are under 18")
         end
 
