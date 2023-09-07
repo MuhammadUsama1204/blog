@@ -9,9 +9,9 @@ class PeopleController < ApplicationController
   def show
     @people=Person.find(params[:id])
   end
-  def create 
+  def create
     @people=Person.new(people_params)
-    
+
     if @people.save
       flash[:success] = "Successfully Added"
       redirect_to '/people/index'
@@ -40,7 +40,7 @@ class PeopleController < ApplicationController
   private
     def people_params
 
-      params.require(:person).permit(:name, :age, :gender, :dob)
+      params.require(:person).permit(:name,:gender, :dob)
     end
 
 end
