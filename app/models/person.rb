@@ -35,7 +35,16 @@ class Person < ApplicationRecord
     #       errors.add(:dob, "should not be today's date")
     #     end
     #   end
+    # def check_age
 
+
+    #     if age.present? && age < 18
+    #           # Raise an exception with a custom message to halt the callback chain
+    #           raise ActiveRecord::Rollback.new("User must be at least 18 years old to save.")
+    #         end
+
+
+    #     end
 
     def custom_dob_check
 
@@ -44,6 +53,8 @@ class Person < ApplicationRecord
         end
         if age < 19
             errors.add(:dob, "you are under 18")
+            #raise exception
+            raise ActiveRecord::Rollback.new("User must be at least 19 years old to save.")
         end
 
         # parsed_dob = Date.strptime(dob, "%b %d %Y --") rescue nil
