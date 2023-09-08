@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_08_113554) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_08_120426) do
   create_table "article_clients", force: :cascade do |t|
     t.integer "client_id", null: false
     t.integer "article_id", null: false
@@ -60,6 +60,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_08_113554) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
+  create_table "demos", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -72,6 +78,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_08_113554) do
     t.text "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "sub_demos", force: :cascade do |t|
+    t.string "title"
+    t.integer "demo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["demo_id"], name: "index_sub_demos_on_demo_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,4 +101,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_08_113554) do
   add_foreign_key "client_articles", "articles"
   add_foreign_key "client_articles", "clients"
   add_foreign_key "comments", "articles"
+  add_foreign_key "sub_demos", "demos"
 end
