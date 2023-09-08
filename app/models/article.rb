@@ -3,6 +3,9 @@ class Article < ApplicationRecord
 
     # has_many :comments, dependent: :destroy
     has_and_belongs_to_many :comment
+    has_many :client_article
+    has_many :client, through: :client_article
+
     validates :title, presence: true
     validates :body, presence: true, length: { minimum: 10 }
 #calls backs
