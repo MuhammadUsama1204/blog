@@ -2,7 +2,7 @@ class Article < ApplicationRecord
     include Visible
 
     # has_many :comments, dependent: :destroy
-    has_many_and_belongs_to :comment
+    has_and_belongs_to_many :comment
     validates :title, presence: true
     validates :body, presence: true, length: { minimum: 10 }
 #calls backs
