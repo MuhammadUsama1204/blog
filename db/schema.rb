@@ -34,14 +34,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_095021) do
     t.integer "comment_id", null: false
   end
 
-  create_table "client_articles", force: :cascade do |t|
-    t.integer "client_id", null: false
-    t.integer "article_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_client_articles_on_article_id"
-    t.index ["client_id"], name: "index_client_articles_on_client_id"
-  end
+  # create_table "client_articles", force: :cascade do |t|
+  #   t.integer "client_id", null: false
+  #   t.integer "article_id", null: false
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  #   t.index ["article_id"], name: "index_client_articles_on_article_id"
+  #   t.index ["client_id"], name: "index_client_articles_on_client_id"
+  # end
 
   create_table "clients", force: :cascade do |t|
     t.text "User_Name"
