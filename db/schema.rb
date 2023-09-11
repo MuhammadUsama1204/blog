@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_11_072721) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_11_095021) do
   create_table "article_clients", force: :cascade do |t|
     t.integer "client_id", null: false
     t.integer "article_id", null: false
@@ -68,6 +68,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_072721) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "managers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -114,6 +120,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_072721) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email_confirmation"
+    t.integer "manager_id"
+    t.index ["manager_id"], name: "index_users_on_manager_id"
   end
 
   add_foreign_key "article_clients", "articles"
@@ -121,4 +129,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_072721) do
   add_foreign_key "client_articles", "articles"
   add_foreign_key "client_articles", "clients"
   add_foreign_key "sub_demos", "demos"
+  add_foreign_key "users", "users", column: "manager_id"
 end
