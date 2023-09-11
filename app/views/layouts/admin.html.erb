@@ -7,18 +7,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    
+
   </head>
   <body style="background-color:#00FFFF " >
-    
+
     <div style="text-align: center">
       <h1>Welcome to My Blog App</h1>
     </div>
     <%= yield %>
   </body>
 </html>
-
-
