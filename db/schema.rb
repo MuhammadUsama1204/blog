@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_11_095021) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_11_110029) do
   create_table "article_clients", force: :cascade do |t|
     t.integer "client_id", null: false
     t.integer "article_id", null: false
@@ -34,14 +34,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_095021) do
     t.integer "comment_id", null: false
   end
 
-  # create_table "client_articles", force: :cascade do |t|
-  #   t.integer "client_id", null: false
-  #   t.integer "article_id", null: false
-  #   t.datetime "created_at", null: false
-  #   t.datetime "updated_at", null: false
-  #   t.index ["article_id"], name: "index_client_articles_on_article_id"
-  #   t.index ["client_id"], name: "index_client_articles_on_client_id"
-  # end
+  create_table "client_articles", force: :cascade do |t|
+    t.integer "client_id", null: false
+    t.integer "article_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_client_articles_on_article_id"
+    t.index ["client_id"], name: "index_client_articles_on_client_id"
+  end
 
   create_table "clients", force: :cascade do |t|
     t.text "User_Name"
@@ -122,6 +122,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_11_095021) do
     t.string "email_confirmation"
     t.integer "manager_id"
     t.index ["manager_id"], name: "index_users_on_manager_id"
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string "type"
+    t.string "color"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "article_clients", "articles"
