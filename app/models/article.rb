@@ -1,6 +1,11 @@
 class Article < ApplicationRecord
     include Visible
-#polymorphic association
+   # byebug
+    #self.locking_column = :title
+    # scope :status, -> { where(status: 'archived') }
+    # scope :tilte, -> { where(title: true) }
+#  enum :status, [:public, :private, :archived]
+    #polymorphic association
 has_many :reviews, as: :reviewable
 has_many :comments, dependent: :destroy
 
