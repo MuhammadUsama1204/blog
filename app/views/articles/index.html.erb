@@ -2,12 +2,32 @@
 
 Our blog has <%= Article.public_count %> articles and counting!
 
+
+
+
+
+
+<form action="/search" method="get" accept-charset="UTF-8" >
+  <label for="query">Search for:</label>
+  <input id="query" name="query" type="text" />
+  <input name="commit" type="submit" value="Search" data-disable-with="Search" />
+</form>
+
+
+
+
+
+
+
+
+
+
 <ul>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
       <li>
         <%= link_to article.title, article %>
-        
+
       </li>
     <% end %>
   <% end %>

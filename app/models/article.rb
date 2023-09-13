@@ -6,8 +6,8 @@ class Article < ApplicationRecord
     # scope :tilte, -> { where(title: true) }
 #  enum :status, [:public, :private, :archived]
     #polymorphic association
-has_many :reviews, as: :reviewable
-has_many :comments, dependent: :destroy
+    has_many :reviews, as: :reviewable
+    has_many :comments, dependent: :destroy
 
     # has_and_belongs_to_many :comment
     # has_many :article_client
