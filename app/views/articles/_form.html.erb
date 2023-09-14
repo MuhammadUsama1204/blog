@@ -1,5 +1,5 @@
 
-  
+
   <%= form_with model: article do |form| %>
     <div>
       <%= form.label :title %><br>
@@ -9,8 +9,40 @@
       <% end %>
     </div>
 
+ <%
+=begin%>
+ <%= form.radio_button :age, "child" %>
+<%= form.label :age_child, "I am younger than 21" %>
+<%= form.radio_button :age, "adult" %>
+<%= form.label :age_adult, "I am over 21" %>
+<%= form_with model: @person do |form| %>
+  Addresses:
+  <ul>
+    <%= form.fields_for :addresses do |addresses_form| %>
+      <li>
+        <%= addresses_form.label :kind %>
+        <%= addresses_form.text_field :kind %>
+
+        <%= addresses_form.label :street %>
+        <%= addresses_form.text_field :street %>
+        ...
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<%
+=end%>
+
+
+
+
+
+
+
+
+
     <div>
-    
+
       <%= form.label :body %><br>
       <%= form.text_area :body %><br>
       <% article.errors.full_messages_for(:body).each do |message| %>

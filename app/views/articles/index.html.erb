@@ -22,6 +22,7 @@ Our blog has <%= Article.public_count %> articles and counting!
 
 
 
+
 <ul>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
