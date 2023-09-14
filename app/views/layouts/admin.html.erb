@@ -14,11 +14,8 @@
   </head>
   <body style="background-color:#00FFFF " >
 
-    <%
-=begin%>
  <%=render partial: "layouts/header"%>
-<%
-=end%>
+
 
 
 
@@ -30,13 +27,7 @@
 
 
     <%= yield %>
-    <%if admin_user_signed_in? %>
-<%= link_to "Logout", destroy_admin_user_session_path, data: { turbo_method: :delete } %>
 
-    <%else%>
-         <%=link_to "sign_in",new_admin_user_session_path%>
-
-    <%end%>
 
   </body>
 </html>
